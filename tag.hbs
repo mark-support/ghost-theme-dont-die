@@ -8,7 +8,7 @@
       <article class="result{{#if tag.image}} cover-image-present{{/if}}"{{#if tag.image}} style="background-image: url({{tag.image}});"{{/if}}>
         <div class="inner post-inner">
 
-          <h1 class="searching">
+          <h1 class="searching glitch" data-text="{{{tag.name}}}>
             <a href="{{@blog.url}}/tag/{{tag.slug}}/rss/">{{tag.name}}</a>
           </h1>
           <div class="excerpt">
