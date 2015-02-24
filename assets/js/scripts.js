@@ -42,6 +42,10 @@ jQuery.noConflict();
         };
         makeInsert();
 
+				jQuery(window).resize(function () {
+					makeInsert();
+				});
+
 
 		// Detect height of first article then remove position fixed from top article on archive
 		if ( $('body').is('.home-template') || $('body').is('.archive-template') ) {

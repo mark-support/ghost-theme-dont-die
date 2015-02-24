@@ -28,13 +28,13 @@
 			<div class="post-header-inner">
 				<ul class="meta top">
 		      <li class="time">
-			     <time class="post-date updated" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></li>
+			     <time class="post-date updated" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time></li>
 	    </ul>
-			<h1 class="entry-title post-title">{{title}}</h1>
+			<h1 class="entry-title post-title font-effect-anaglyph glitch" data-text="{{{title}}}">{{title}}</h1>
 		<ul class="meta">
   		<li class="author-meta post-tags">
   			<div class="author-avatar avatar-small">{{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}}</div>
-        <div class="author-byline">Post by  <span class="vcard author post-author"><span class="fn">{{author}}</span></span></div>
+        <div class="author-byline"><span class="vcard author post-author"><span class="fn">{{author}}</span></span></div>
   		</li>
 	  </ul>
 		</div><!-- /post-header-inner -->
@@ -51,31 +51,9 @@
 
   {{#if tags}}
     <ul class="meta bottom">
-  			<li class="tag post-tags">Tagged: {{tags separator=", "}}</li>
+  			<li class="tag post-tags">Filed under: {{tags separator=", "}}</li>
   	</ul>
   {{/if}}
-
-
-
-  <ul class="meta sharer">
-  	<li class="share-on">
-  	  Share on: 		<a target="blank" title="{{title}}" href="https://twitter.com/share?text={{title}}%20-%20&amp;url={{url absolute="true"}}" onclick="window.open('https://twitter.com/share?text={{title}}%20-%20&amp;url={{url absolute="true"}}','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class="twitter">
-  		 <i class="fa fa-twitter"></i>		 </a>
-  </li>
-  <li class="share-on">
-  		<a href="http://pinterest.com/pin/create/button/?url={{url absolute="true"}}&amp;description={{title}}" target="_blank" class=" pinterest offblack">
-  			<i class="fa fa-pinterest"></i>			</a>
-  </li>
-  <li class="share-on">
-  		 <a target="blank" title="{{title}}" href="http://www.facebook.com/share.php?u={{url absolute="true"}}" onclick="window.open('http://www.facebook.com/share.php?u={{url absolute="true"}}','facebook','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class=" facebook ">
-  		 <i class="fa fa-facebook"></i>		 </a>
-  </li>
-
-  <li class="share-on">
-  		  <a onclick="window.open('https://plus.google.com/share?url={{url absolute="true"}}','gplusshare','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="https://plus.google.com/share?url={{url absolute="true"}}" class=" googleplus offblack">
-  		   <i class="fa fa-google-plus"></i>		   </a>
-  </li>
-  </ul>
 
 
 </div> <!-- /meta-hold -->
@@ -91,7 +69,7 @@
     <span class="author-avatar"><img class="author-thumb" src="{{image}}" alt="{{name}} image" nopin="nopin" /></span>
   {{/if}}
   <div class="author-bio">
-      <h6><span>Post by</span> <a href="{{url}}">{{name}}</a></h6>
+      <h6><a href="{{url}}">{{name}}</a></h6>
       {{#if bio}}
           <p>{{bio}}</p>
       {{/if}}
