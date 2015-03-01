@@ -2315,7 +2315,7 @@ input[type="tel"], input[type="password"], textarea {
 	font-weight: 400;
 	font-family: Helvetica, Arial, sans-serif;
 	width: 100%;
-	opacity: .5;
+	opacity: .9;
 }
 
 input[type="submit"], button {
@@ -3309,7 +3309,8 @@ h4, h5, h6 {
 
 .bug{
 	display: inline-block;
-  width: 20px;
+  width: 40px;
+	float: right;
 
 }
 
@@ -3604,7 +3605,7 @@ blockquote, .comment-reply-link:hover, button:hover, input[type="submit"]:hover 
 float: right;
 border-color: #000000;
 border: 0px;
-opacity: .7;
+opacity: .9;
 width: 100%;
 
 }
