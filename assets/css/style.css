@@ -2463,13 +2463,6 @@ header.header .logo-wrap #menu-trigger svg {
 	text-align: center;
 }
 
-.background-glitch /*apply to canvas element to be altered by glitch.js*/
-{
-	position:fixed;
-	top:0;
-	left:0
-}
-
 
 
 #overlay.hide {
@@ -2812,6 +2805,7 @@ nav.pagination span {
   border: 2px solid #fff;
   padding: 12px 42px;
   text-decoration: none;
+	background-image: url(/assets/img/glitch.gif);
 }
 
 .comment-reply-link {
@@ -3278,13 +3272,7 @@ h4, h5, h6 {
   margin-top: 38px;
   margin-bottom: 8px;
   font-family: 'Source Code Pro', sans-serif;
-  @include textGlitch("glitch", 17, white, black, red, blue, 450, 115);
 }
-
-.glitch{
-  @include textGlitch("glitch", 17, white, black, red, blue, 450, 115);
-}
-
 
 
 .comments-form h3#respond-title {
@@ -3347,7 +3335,10 @@ h4, .footer-widgets h6 {
 
 h5 {
   font-size: 25px;
-  font-size: 2.0 rem;
+  font-size: 1.8 rem;
+	text-transform: none; /*This is used as Question font for interviews*/
+	padding-bottom: 7px;
+
 }
 
 h6, .author-wrap, .post-template .main .post-inner .author-wrap p:first-of-type {
@@ -3381,7 +3372,7 @@ blockquote p, blockquote p:first-of-type {
 
 .more-link, .btn, button, input[type="submit"], footer, .loader span {
   font-size: 15px;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 
 .tagcloud, .loader {
@@ -3392,7 +3383,7 @@ blockquote p, blockquote p:first-of-type {
   font-size: 1.8rem !important;
 }
 
-header.header .logo, h1, h2, h3, h4, h5, h6, .btn, .more-link, input[type="submit"], button, #comments .url, .comment-date, .comment-reply-link, .loader {
+header.header .logo, h1, h2, h3, h4, .btn, .more-link, input[type="submit"], button, #comments .url, .comment-date, .comment-reply-link, .loader {
   text-transform: uppercase;
 }
 
@@ -3406,6 +3397,7 @@ body, .meta, .excerpt, .author-wrap h6 span, .loader span {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
+
 }
 
 .tagcloud, input[type="text"].s, .more-link, .btn, header.header .logo, h1, h2, h3, h4, h5, h6, input[type="submit"], button, input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="password"], textarea, #comments .url, .comment-date, .comment-reply-link, .loader {
@@ -3414,7 +3406,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #menu, .meta, .author-wrap h6 span, footer, .excerpt, .pagination, .loader span, .home-content {
   font-style: normal;
-  @include textGlitch("example-one", 17, white, black, red, blue, 450, 115);
 }
 
 .meta time {
@@ -4765,5 +4756,11 @@ a.social.white.spotify {
   margin-right: auto;
   margin-top: 10px;
   margin-bottom: 10px;
+}
 
+
+
+.glitch
+{
+	@include textGlitch("glitch", 17, white, black, red, blue, 450, 115);
 }
