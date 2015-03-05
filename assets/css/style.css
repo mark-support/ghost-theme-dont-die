@@ -6,7 +6,7 @@
 	Author: MeanThemes
 	Author URI: http://meanthemes.com/
 	Version: 1.0.5
-  Date Modified: 16th February 2015
+  Date Forked from main theme: 16th February 2015
 
 ==========================================================================
 */
@@ -81,7 +81,7 @@ body {
 }
 
 select, input, textarea, button {
-  font: 99% sans-serif;
+  font: 80% 'Source Code Pro', sans-serif;
 }
 
 pre, code, kbd, samp {
