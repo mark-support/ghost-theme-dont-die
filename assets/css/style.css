@@ -2612,6 +2612,8 @@ footer.footer {
   width: 100%;
   padding: 60px 30px;
   text-align: center;
+	background-image: url(/assets/img/screen-rainbow.jpg);
+  background-size: cover;
 }
 footer.footer a {
   text-decoration: none;
