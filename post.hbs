@@ -47,16 +47,16 @@
               <a class="bug" href="{{@blog.url}}"><img class="bug" src="{{@blog.logo}}" alt="{{@blog.title}} Logo" /></a>
 
 
-  <div class="meta-hold">
+              <div class="meta-hold">
 
-  {{#if tags}}
-    <ul class="meta bottom">
-  			<li class="tag post-tags">Filed under: {{tags separator=", "}}</li>
-  	</ul>
-  {{/if}}
+              {{#if tags}}
+                <ul class="meta bottom">
+                    <li class="tag post-tags">{{tags separator=" | " prefix="Tagged in:"}}</li>
+                </ul>
+              {{/if}}
 
 
-</div> <!-- /meta-hold -->
+            </div> <!-- /meta-hold -->
 
 
 
