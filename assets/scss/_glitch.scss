@@ -1,6 +1,6 @@
 /*
   Glitch effect - http://css-tricks.com/glitch-effect-text-images-svg/
-  
+
   (TEXT) PARAMS
   =================
   1. Namespace
@@ -14,11 +14,11 @@
 */
 
 @mixin textGlitch($name, $intensity, $textColor, $background, $highlightColor1, $highlightColor2, $width, $height) {
-  
+
   color: $textColor;
   position: relative;
   $steps: $intensity;
-  
+
   // Ensure the @keyframes are generated at the root level
   @at-root {
     // We need two different ones
@@ -26,7 +26,7 @@
       @keyframes #{$name}-anim-#{$i} {
         @for $i from 0 through $steps {
           #{percentage($i*(1/$steps))} {
-            clip: rect(
+            clip-path: rect(
               random($height)+px,
               $width+px,
               random($height)+px,
@@ -45,7 +45,7 @@
     left: 0;
     width: 100%;
     background: $background;
-    clip: rect(0, 0, 0, 0); 
+    clip-path: rect(0, 0, 0, 0);
   }
   &:after {
     left: 2px;
@@ -54,17 +54,17 @@
   }
   &:before {
     left: -2px;
-    text-shadow: 2px 0 $highlightColor2; 
+    text-shadow: 2px 0 $highlightColor2;
     animation: #{$name}-anim-2 3s infinite linear alternate-reverse;
   }
-  
+
 }
 
 
 @mixin imgGlitch($name, $intensity, $width, $height, $top, $left) {
-  
+
   $steps: $intensity;
-  
+
   // Ensure the @keyframes are generated at the root level
   @at-root {
     // We need two different ones
@@ -72,7 +72,7 @@
       @keyframes #{$name}-anim-#{$i} {
         @for $i from 0 through $steps {
           #{percentage($i*(1/$steps))} {
-            clip: rect(
+            clip-path: rect(
               random($height)+px,
               $width+px,
               random($height)+px,
@@ -83,7 +83,7 @@
       }
     }
   }
-  
+
   > img {
     position: absolute;
     top: $top+px;
@@ -91,7 +91,7 @@
   }
   > img:nth-child(2),
   > img:nth-child(3){
-    clip: rect(0, 0, 0, 0); 
+    clip-path: rect(0, 0, 0, 0);
   }
   > img:nth-child(2) {
     left: ($left + 2) + px;
@@ -106,9 +106,9 @@
 
 
 @mixin svgGlitch($name, $intensity, $fillColor, $background, $fillHighlight1, $fillHighlight2, $width, $height, $top, $left) {
-  
+
   $steps: $intensity;
-  
+
   // Ensure the @keyframes are generated at the root level
   @at-root {
     // We need two different ones
@@ -116,7 +116,7 @@
       @keyframes #{$name}-anim-#{$i} {
         @for $i from 0 through $steps {
           #{percentage($i*(1/$steps))} {
-            clip: rect(
+            clip-path: rect(
               (random($height)-20)+px,
               $width+px,
               (random($height)+20)+px,
@@ -127,7 +127,7 @@
       }
     }
   }
-  
+
   svg {
     position: absolute;
     top: $top+px;
@@ -139,7 +139,7 @@
   }
   svg:nth-child(2),
   svg:nth-child(3) {
-    clip: rect(0, 0, 0, 0); 
+    clip-path: rect(0, 0, 0, 0);
   }
   svg:nth-child(2) {
     fill: $fillHighlight1;

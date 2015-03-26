@@ -20,9 +20,8 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   vertical-align: baseline;
   margin: 0;
   padding: 0;
-  font-family: 'Cabin Condensed', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
-
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
@@ -81,11 +80,7 @@ body {
 }
 
 select, input, textarea, button {
-  font: 80% 'Source Code Pro', sans-serif;
-}
-
-pre, code, kbd, samp {
-  font-family: monospace, sans-serif;
+  font: 80%;
 }
 
 html {
@@ -210,21 +205,11 @@ img {
 /* ==========================================================================
 		Plugins
 	========================================================================== */
-
-@font-face {
-    font-family: 'Cabin Condensed', sans-serif;
-}
-
-@font-face {
-      font-family: 'Play', sans-serif;
-}
-
-
-
 /*!
  *  Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
+
 @font-face {
   font-family: 'FontAwesome';
   src: url("../fonts/fontawesome-webfont.eot?v=4.1.0");
@@ -3237,22 +3222,13 @@ html {
   }
 }
 body {
-  line-height: 1.5;
-}
-
-.post-template .main .post-inner p:first-of-type {
-  font-size: 120%;
-  padding-bottom: 20px;
+  line-height: 1.4;
 }
 
 input[type="text"].s, .pagination, .more-link, .btn, header.header .logo, h1, h2, h3, h4, h5, h6, input[type="submit"], button, input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="password"], textarea, .loader {
   font-weight: 400;
   color: #393a3a;
   line-height: 1.4;
-}
-
-body, .meta, .excerpt, .author-wrap h6 span, .pagination, .loader span {
-  font-family: 'Crimson Text', Georgia, serif;
 }
 
 p {
@@ -3270,10 +3246,9 @@ p:last-of-type {
 h1, h2, h3,
 h4, h5, h6 {
   font-weight: 600;
-  line-height: 1;
-  margin-top: 38px;
+  line-height: 1.4;
+    margin-top: 38px;
   margin-bottom: 8px;
-  font-family: 'Source Code Pro', sans-serif;
 }
 
 
@@ -3320,9 +3295,15 @@ h4, h5, h6 {
   line-height: .9;
 }
 
+
+h1{
+  font-family: 'Source Code Pro', Sans-serif;
+}
+
 h2, .post-navigation h4 {
   font-size: 35px;
   font-size: 3.5rem;
+  font-family: 'Source Code Pro', Sans-serif;
 }
 
 h3, .loader {
@@ -3337,10 +3318,10 @@ h4, .footer-widgets h6 {
 
 h5 {
   font-size: 20px;
-  font-size: 1.8 rem;
+  font-size: 2.8 rem;
 	text-transform: none; /*This is used as Question font for interviews*/
 	padding-bottom: 7px;
-
+  @include textGlitch("glitch", 17, white, black, red, blue, 450, 115);
 }
 
 h6, .author-wrap, .post-template .main .post-inner .author-wrap p:first-of-type {
@@ -4748,7 +4729,9 @@ a.social.white.spotify {
   margin-bottom: 10px;
 }
 
-
+.glitch{
+  @include textGlitch("don't die", 17, white, black, red, blue, 450, 115);
+}
 
 
 
@@ -4758,50 +4741,3 @@ a.social.white.spotify {
 	@include textGlitch("glitch", 17, white, black, red, blue, 450, 115);
 }
 */
-
-.glitch{
-  color:white;
-  position:relative;
-  margin:0 auto;
-}
-@keyframes noise-anim{
-  $steps:20;
-  @for $i from 0 through $steps{
-    #{percentage($i*(1/$steps))}{
-      clip:rect(random(100)+px,9999px,random(100)+px,0);
-    }
-  }
-}
-.glitch:after{
-  content:attr(data-text);
-  position:absolute;
-  left:2px;
-  text-shadow:-1px 0 red;
-  top:0;
-  color:white;
-  background:black;
-  overflow:hidden;
-  clip:rect(0,900px,0,0);
-  animation:noise-anim 2s infinite linear alternate-reverse;
-}
-
-@keyframes noise-anim-2{
-  $steps:20;
-  @for $i from 0 through $steps{
-    #{percentage($i*(1/$steps))}{
-      clip:rect(random(100)+px,9999px,random(100)+px,0);
-    }
-  }
-}
-.glitch:before{
-  content:attr(data-text);
-  position:absolute;
-  left:-2px;
-  text-shadow:1px 0 blue;
-  top:0;
-  color:white;
-  background:black;
-  overflow:hidden;
-  clip:rect(0,900px,0,0);
-  animation:noise-anim-2 3s infinite linear alternate-reverse;
-}
