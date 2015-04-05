@@ -2773,8 +2773,12 @@ footer.footer .socials {
   margin-bottom: 0;
 }
 
+.VHS{
+  background-image: url(/assets/img/VHS.gif);
+}
+
 .meta-hold, nav.pagination {
-  border-top: 2px solid #e5e5e5;
+  border-top: 0px solid #e5e5e5;
   margin-top: 40px;
   padding-top: 15px;
 }
@@ -2962,7 +2966,8 @@ button, input[type="submit"] {
 .pagination .next-posts, .pagination .previous-posts {
   display: table-cell;
   width: 50%;
-  border: 2px solid #e5e5e5;
+  border: 0px solid #e5e5e5;
+  text-align: center;
 }
 .pagination .next-posts a, .pagination .previous-posts a {
   display: block;
@@ -2970,12 +2975,9 @@ button, input[type="submit"] {
   text-decoration: none;
 }
 .pagination .next-posts {
-  border-left-width: 1px;
-  text-align: right;
   border-right: none;
 }
 .pagination .previous-posts {
-  border-right-width: 1px;
   border-left: 0;
 }
 
@@ -3227,7 +3229,6 @@ body {
 
 input[type="text"].s, .pagination, .more-link, .btn, header.header .logo, h1, h2, h3, h4, h5, h6, input[type="submit"], button, input[type="text"], input[type="url"], input[type="email"], input[type="tel"], input[type="password"], textarea, .loader {
   font-weight: 400;
-  color: #393a3a;
   line-height: 1.4;
 }
 
