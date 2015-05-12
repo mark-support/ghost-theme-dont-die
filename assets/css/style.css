@@ -3457,11 +3457,15 @@ a, .comment-reply-link:hover, button:hover, input[type="submit"]:hover,
   color: #8c8c8c;
 }
 
-.author-wrap h6 a, footer a:hover, .pagination a:hover, .widgets a, .widgets .tagcloud a:hover, .main-archive article.no-image:nth-of-type(2n) *, article.no-image:nth-of-type(2n) a,
+.author-wrap h6 a, footer a:hover, .widgets a, .widgets .tagcloud a:hover, .main-archive article.no-image:nth-of-type(2n) *, article.no-image:nth-of-type(2n) a,
 .comment-body .url, .owl-next, .owl-prev,
 .comment-reply-link,
 .meta .share-on, .meta .share-on, .meta .share-on .social:hover, .meta.bottom {
   color: #060b0e;
+}
+
+.pagination a:hover{
+  color: #ffffff;
 }
 
 .widgets.header-widgets *,
