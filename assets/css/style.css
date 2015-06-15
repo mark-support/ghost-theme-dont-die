@@ -4762,6 +4762,11 @@ a.sitename, a:visited.sitename {
   position: fixed;
   top: 0;
   left: 0;
+  width: 10%;
+  max-width: 100px;
+  margin-left: 10px;
+  margin-top: 5px;
+
 }
 
 @media only screen and (max-width: 220px) {
