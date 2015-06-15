@@ -5,7 +5,7 @@ jQuery.noConflict();
 
 	if ( $('body').is('.home-template' ) || $('body').is('.archive-template') ) {
 	// Add pre-loader for homepage / archive pages
-		var loadingText = "Loading...";
+		var loadingText = "Loading<span>(It won't be long)</span>";
 		jQuery('.wrap').prepend('<div class="loader"><div class="loader-inner">' + loadingText + '</div></div>');
 	}
 

@@ -1,14 +1,44 @@
-<nav class="fixed-nav-bar">
-  <div id="menu" class="menu">
-    <a id="blog-logo" href="{{@blog.url}}"><img id="logo" src="{{@blog.logo}}" alt="{{@blog.title}} Logo" /></a>
-  <!-- Example responsive navigation menu  -->
-  <a class="show" href="#menu"><i class="fa fa-bars"></i></a><a class="hide" href="#hidemenu"><i class="fa fa-bars"></i></a>
+<!-- Navigation here -->
 
-    <ul class="menu-items glitch">
-    {{#foreach @blog.navigation}}
-      <li><a href="{{url absolute="true"}}">{{label}}</a></li>
-    {{/foreach}}
+<div id="overlay">
+<nav id="menu" role="navigation">
+<ul class="nav">
 
-  </ul>
-  </div>
+  <li><a href="/">_home</a></li>
+  <li><a href="/author/dev/">_people who make games</a></li>
+  <li><a href="/author/player/">_people who played games</a></li>
+  <li><a href="/about/">_readme/contact</a></li>
+  <li><a href="https://www.patreon.com/davidwolinsky">_support on patreon</a></li>
+
+
+<!-- Handlebar nav is still buggy....
+  {{#foreach @blog.navigation}}
+    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+  {{/foreach}}-->
+
+
+  <li><a href="http://feeds.feedburner.com/dontdie"><i class="fa fa-rss"></i></a></li>
+
+  <li>
+  <p>
+    <form action="//tumblr.us10.list-manage.com/subscribe/post?u=2298342aac00e965c0cd7a941&amp;id=e1cc110204" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+    <div class="mc-field-group">
+      <input type="email" name="EMAIL" class="required email form-nav" id="mce-EMAIL">
+      <input type="submit" value="subscribe" name="subscribe for updates" id="mc-embedded-subscribe" class="button-nav">
+    </div>
+
+    <div id="mce-responses" class="clear">
+    <div class="response" id="mce-error-response" style="display:none"></div>
+    <div class="response" id="mce-success-response" style="display:none"></div>
+    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_2298342aac00e965c0cd7a941_e1cc110204" tabindex="-1" value=""></div>
+    </div>
+    </form>
+  </p>
+  </li>
+</ul>
+
+
 </nav>
+</div>
