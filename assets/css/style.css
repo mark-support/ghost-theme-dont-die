@@ -2431,151 +2431,6 @@ header.header .logo-wrap #menu-trigger svg {
   margin-left: 10px;
 }
 
-.menu-open #overlay, .drawer-open #overlay {
-  -webkit-overflow-scrolling: touch;
-}
-
-#overlay {
-	position: fixed;
-	display: none;
-	height: 100%;
-	width: 100%;
-	overflow-y: auto;
-	background-image: url(../img/rashes.png);
-	z-index: 10;
-	padding: 0;
-	opacity: 0.7;
-	text-align: center;
-}
-
-
-
-#overlay.hide {
-  top: 0;
-  left: 0;
-  display: none;
-}
-#overlay #menu {
-  padding-top: 150px;
-}
-#overlay #menu li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-#overlay #menu li ul {
-  font-size: 90%;
-}
-#overlay #menu li ul li {
-  border-bottom: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 0 20px;
-}
-#overlay #menu a {
-  text-decoration: none;
-  padding: 10px;
-  display: block;
-  text-align: left;
-}
-#overlay #menu a:hover {
-  opacity: .7;
-}
-#overlay #menu:after {
-  content: '';
-  position: relative;
-  display: block;
-  width: 100px;
-  margin: 30px auto -30px auto;
-  border-top: 1px solid #fff;
-  display: none;
-}
-
-/* Menu Drawer */
-.menu-drawer .wrap {
-  right: 0;
-  -o-transition: all 0.25s ease-in;
-  -webkit-transition: all 0.25s ease-in;
-  -moz-transition: all 0.25s ease-in;
-  transition: all 0.25s ease-in;
-}
-
-.menu-drawer .drawer-open .wrap {
-  left: 0;
-  top: 0;
-  position: fixed;
-  -moz-transform: translate(-330px, 0, 0);
-  -ms-transform: translate(-330px, 0, 0);
-  -webkit-transform: translate(-330px, 0, 0);
-  transform: translate(-330px, 0, 0);
-  -moz-transform: translate3d(-330px, 0, 0);
-  -ms-transform: translate3d(-330px, 0, 0);
-  -webkit-transform: translate3d(-330px, 0, 0);
-  transform: translate3d(-330px, 0, 0);
-}
-.menu-drawer .drawer-open .wrap #overlay {
-  visibility: visible;
-  clip: auto;
-  right: -330px;
-  -webkit-transform: translate3d(0px, 0px, 0px);
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: scale(1);
-  z-index: 10;
-}
-
-.menu-drawer #overlay {
-  position: absolute;
-  top: 0;
-  width: 330px;
-  padding: 10px 30px 20px 30px;
-  display: block;
-  right: 0;
-  visibility: hidden;
-  clip: 0, 0, 0, 0;
-  z-index: -1;
-}
-.menu-drawer #overlay #menu-close {
-  position: absolute;
-  top: 35px;
-  right: 25px;
-  width: 18px;
-  height: 18px;
-  z-index: 1;
-}
-.menu-drawer #overlay #menu-close svg {
-  fill: #fff;
-}
-.menu-drawer #overlay #menu-close:hover {
-  opacity: .5;
-}
-.menu-drawer #overlay .widgets {
-  padding-left: 0;
-  padding-right: 0;
-}
-.menu-drawer #overlay .widgets .widget {
-  width: 100%;
-  text-align: left;
-  padding: 0;
-}
-.menu-drawer #overlay .widgets .widget h5:after {
-  margin-left: 0;
-}
-.menu-drawer #overlay #menu {
-  padding-top: 55px;
-  text-align: left;
-}
-.menu-drawer #overlay #menu li {
-  display: block;
-}
-.menu-drawer #overlay #menu li a {
-  display: block;
-}
-.menu-drawer #overlay #menu li ul {
-  display: block;
-  width: 100%;
-  position: relative;
-}
-.menu-drawer #overlay #menu li:hover ul {
-  width: 100%;
-}
-
 .featured-image {
   background: #000;
 }
@@ -2597,8 +2452,6 @@ footer.footer {
   width: 100%;
   padding: 60px 30px;
   text-align: center;
-	background-image: url(/assets/img/screen-rainbow.jpg);
-  background-size: cover;
 }
 footer.footer a {
   text-decoration: none;
@@ -3322,7 +3175,7 @@ h5 {
   font-size: 2.8 rem;
 	text-transform: none; /*This is used as Question font for interviews*/
 	padding-bottom: 7px;
-  @include textGlitch("glitch", 17, white, black, red, blue, 450, 115);
+  @include glitch;
 }
 
 h6, .author-wrap, .post-template .main .post-inner .author-wrap p:first-of-type {
@@ -3333,7 +3186,6 @@ h6, .author-wrap, .post-template .main .post-inner .author-wrap p:first-of-type 
 blockquote {
   margin-top: 10px;
   margin-bottom: 25px;
-  @include textGlitch("glitch", 17, white, black, red, blue, 450, 115);
 }
 
 .excerpt {
@@ -4734,15 +4586,186 @@ a.social.white.spotify {
   margin-bottom: 10px;
 }
 
+
+
+
+/* ==========================================================================
+   Glitch Effect - http://codepen.io/lbebber/pen/ypgql
+   ========================================================================== */
+
+
+
 .glitch{
-  @include textGlitch("don't die", 17, white, black, red, blue, 450, 115);
+  color:white;
+  font-size:18px;
+  position:relative;
+  margin:0 auto;
+}
+@keyframes noise-anim{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(18)+px,9999px,random(18)+px,0);
+    }
+  }
+}
+.glitch:after{
+  content:attr(data-text);
+  position:absolute;
+  left:2px;
+  text-shadow:-1px 0 red;
+  top:0;
+  color:white;
+  background:black;
+  overflow:hidden;
+  clip:rect(0,900px,0,0);
+  animation:noise-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim-2{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(18)+px,0);
+    }
+  }
+}
+.glitch:before{
+  content:attr(data-text);
+  position:absolute;
+  left:-2px;
+  text-shadow:1px 0 blue;
+  top:0;
+  color:white;
+  background:black;
+  overflow:hidden;
+  clip:rect(0,900px,0,0);
+  animation:noise-anim-2 3s infinite linear alternate-reverse;
 }
 
 
+/* ==========================================================================
+   Static Menu Bar - https://github.com/sixrevisions/fixed-navigation-bar
+   ========================================================================== */
 
-/*
-.glitch
-{
-	@include textGlitch("glitch", 17, white, black, red, blue, 450, 115);
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 50px;
+  background-color: #000000;
+  opacity: 0.7;
 }
-*/
+
+/* The element at the top of the page right after the fixed navigation bar
+   MUST have sufficient top margin or else it will be covered by the bar */
+.content {
+  margin-top: 50px;
+}
+
+/* Example responsive navigation menu  */
+.fixed-nav-bar li, .fixed-nav-bar a {
+  height: 50px;
+  line-height: 50px;
+}
+.menu {
+  width: 95%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.menu a, .menu a:visited {
+  color: #ffffff;
+}
+.menu a:hover, .menu a:target {
+  color: #ebebeb;
+}
+.menu-items {
+  display: inline-block;
+}
+.sitename {
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+a.sitename, a:visited.sitename {
+  color: #e0e0e0;
+}
+.menu-items li {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.menu-items a {
+  text-decoration: none;
+}
+.show, .hide {
+  display: none;
+  padding-left: 15px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center left;
+  color: #dde1e2;
+}
+.show {
+  background-image: url(assets/down-arrow-icon.png);
+}
+.hide {
+  background-image: url(assets/up-arrow-icon.png);
+}
+
+@media only screen and (max-width: 800px) {
+  .menu {
+    position: relative;
+    width: 100%;
+  }
+  .sitename {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    margin-left: 0px;
+  }
+  .menu-items {
+    display: none;
+    width: 100%;
+    margin-top: 50px;
+    background-color: #000000;
+  }
+  .menu-items li {
+    display: block;
+    text-align: center;
+  }
+  .show, .hide {
+    position: absolute;
+    top: 0;
+    right: 15px;
+  }
+  .show {
+    display: inline-block;
+  }
+  .hide {
+    display: none;
+  }
+  #menu:target .show {
+    display: none;
+  }
+  #menu:target .hide, #menu:target .menu-items {
+    display: inline-block;
+  }
+}
+
+#blog-logo{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media only screen and (max-width: 220px) {
+  .sitename, .show, .hide {
+    font-size: 14px;
+  }
+}
