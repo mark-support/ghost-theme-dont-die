@@ -3266,6 +3266,8 @@ h4, h5, h6 {
 
 .post-template .main .post-inner p:first-of-type {
   padding-bottom: 0;
+  width: 50%
+  max-width: 960px;
 }
 
 .logo {
@@ -3275,7 +3277,7 @@ h4, h5, h6 {
 
 .bug{
 	display: inline-block;
-  width: 40px;
+  	width: 40px;
 	float: right;
 
 }
@@ -3318,10 +3320,13 @@ h4, .footer-widgets h6 {
 }
 
 h5 {
-  font-size: 20px;
+  font-size: 26px;
   font-size: 2.8 rem;
+  text-align: right;
+  width: 102%;
 	text-transform: none; /*This is used as Question font for interviews*/
-	padding-bottom: 7px;
+	padding-top: 10px;
+	padding-bottom: 10px;
   @include textGlitch("glitch", 17, white, black, red, blue, 450, 115);
 }
 
