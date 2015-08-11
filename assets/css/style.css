@@ -4758,11 +4758,6 @@ a.social.white.spotify {
 Overlay for search
 */
 
-.search{
-	position:fixed;
-	top:5%;
-	width:70%;
-}
 
 .overlay-hugeinc {
 	opacity: 0;
