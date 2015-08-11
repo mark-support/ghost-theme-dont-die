@@ -70,7 +70,19 @@
 
     <script type="text/javascript" src="{{asset "js/plugins/global-plugins.min.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/scripts.min.js"}}"></script>
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>
+        var searchField = $("#search-field").ghostHunter({
+                            results     : "#results",
+                            onKeyUp         : true,
+                            rss         : "/rss/",
+                            //Enable the "search as you type" by uncommenting the following line
+                            //onKeyUp   : true
+                          });
+        function clearResults() {
+          searchField.clear();
+        }
+      </script>
 
 
 </body>

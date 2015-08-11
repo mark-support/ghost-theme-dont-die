@@ -2287,7 +2287,7 @@ kbd {
 }
 
 input[type="text"], input[type="url"], input[type="email"],
-input[type="tel"], input[type="password"], textarea {
+input[type="tel"], input[type="password"], input[type="search-field"], textarea {
 	background-color: #FFFFFF;
 	border-radius: 0;
 	-webkit-appearance: none;
@@ -4751,3 +4751,46 @@ a.social.white.spotify {
 	@include textGlitch("glitch", 17, white, black, red, blue, 450, 115);
 }
 */
+
+
+
+/*
+Overlay for search
+*/
+
+.search{
+	position:fixed;
+	top:5%;
+	width:70%;
+}
+
+.overlay-hugeinc {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+.overlay-hugeinc.open {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 0.5s;
+}
+
+.overlay-hugeinc nav {
+	perspective: 1200px;
+}
+
+.overlay-hugeinc nav ul {
+	opacity: 0.4;
+	transform: translateY(-25%) rotateX(35deg);
+	transition: transform 0.5s, opacity 0.5s;
+}
+
+.overlay-hugeinc.open nav ul {
+	opacity: 1;
+	transform: rotateX(0deg);
+}
+
+.overlay-hugeinc.close nav ul {
+	transform: translateY(25%) rotateX(-35deg);
+}
