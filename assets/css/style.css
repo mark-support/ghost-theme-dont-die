@@ -2878,21 +2878,7 @@ button, input[type="submit"] {
 .main .post-align {
   padding-top: 30px;
 }
-.main .f-expander {
-  position: absolute;
-  right: 0;
-  top: 100%;
-  margin-top: -54px;
-  padding: 15px;
-  height: 54px;
-  width: 54px;
-  z-index: 8;
-  text-align: center;
-}
-.main .f-expander svg {
-  width: 22px;
-  height: 22px;
-}
+
 .main .f-expander svg#expand {
   fill: #060b0e;
 }
@@ -3090,6 +3076,7 @@ button, input[type="submit"] {
 .main-archive article.home-article:before {
   display: none;
 }
+
 .main-archive article.home-article:after {
   content: '';
   background-color: #000;
@@ -4743,6 +4730,39 @@ a.social.white.spotify {
   @include textGlitch("don't die", 17, white, black, red, blue, 450, 115);
 }
 
+#navheader{
+}
+
+#navbar{
+  position: fixed;
+  z-index: 10;
+  border:1px solid #42432d;
+  border-width:1px 0;
+  margin-top: 50px;
+}
+
+#navbar li{
+  display:inline;
+  padding:0;
+  margin:0;
+  font-family: 'Source Code Pro', Sans-serif;
+  font-size: 26px;
+  font-size: 2.8 rem;
+}
+
+#nav a:link,
+#nav a:visited {
+color:#000;
+background:#b2b580;
+padding:20px 40px 4px 10px;
+float:left;
+width:100%;
+border-right:1px solid #42432d;
+}
+
+#nav li:first-child a {
+border-left:1px solid #42432d;
+}
 
 
 /*

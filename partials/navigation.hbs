@@ -1,14 +1,10 @@
 <!-- Navigation here -->
-
-<div id="overlay">
-<nav id="menu" role="navigation">
+<nav id="navbar" role="navigation">
 <ul class="nav">
 
-  <li><a href="/">_home</a></li>
-  <li><a href="/author/dev/">_people who make games</a></li>
-  <li><a href="/author/player/">_people who played games</a></li>
-  <li><a href="/about/">_readme/contact</a></li>
-  <li><a href="https://www.patreon.com/davidwolinsky">_support on patreon</a></li>
+  <li id="nav-home"><a href="/">_home</a></li>
+  <li id="nav-about"><a href="/about/">_readme</a></li>
+  <li id="nav-patreon"><a href="https://www.patreon.com/davidwolinsky">_support on patreon</a></li>
 
 
 <!-- Handlebar nav is still buggy....
@@ -17,9 +13,9 @@
   {{/foreach}}-->
 
 
-  <li><a href="http://feeds.feedburner.com/dontdie"><i class="fa fa-rss"></i></a></li>
+  <li id="nav-feed"><a href="http://feeds.feedburner.com/dontdie"><i class="fa fa-rss"></i></a></li>
 
-  <li>
+  <li id="nav-signup">
   <p>
     <form action="//tumblr.us10.list-manage.com/subscribe/post?u=2298342aac00e965c0cd7a941&amp;id=e1cc110204" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
@@ -39,6 +35,4 @@
   </li>
 </ul>
 
-
 </nav>
-</div>
