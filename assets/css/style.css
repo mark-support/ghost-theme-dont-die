@@ -3440,8 +3440,7 @@ a.more-link:hover {
 }
 
 footer.footer {
-  background-image: url({{asset "img/wrecked.png"}})) !important;
-  background-repeat: repeat-y;
+  background-image: url(/assets/img/VHS.gif) !important;
 }
 
 .comments-form + footer.footer {
@@ -4743,7 +4742,11 @@ a.social.white.spotify {
   @include textGlitch("don't die", 17, white, black, red, blue, 450, 115);
 }
 
-
+.social-icon{
+  letter-spacing: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 /*
 .glitch
