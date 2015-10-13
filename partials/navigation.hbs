@@ -1,24 +1,35 @@
 <!-- Navigation here -->
 
-<div id="overlay">
-<nav id="menu" role="navigation">
-<ul class="nav">
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+             {{#if @blog.logo}}
+               <a id="blog-logo" class="brand-logo" href="{{@blog.url}}"><img id="logo" src="{{@blog.logo}}" alt="{{@blog.title}} Logo" /></a>
+             {{else}}
+               <div class="brand-logo"><h5><a href="{{@blog.url}}" title="Go to Home">{{@blog.title}}</a></h5></div>
+             {{/if}}
 
-  <li><a href="/">_home</a></li>
-  <li><a href="/about/">_readme/contact</a></li>
-  <li><a href="https://www.patreon.com/davidwolinsky" target="_blank">_support on patreon</a></li>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><h5><a href="/about/">_readme</a></h5></li>
+        <li><h5><a href="https://www.patreon.com/davidwolinsky" target="_blank">_support</a></h5></li>
+        <li><h5><a href="http://feeds.feedburner.com/dontdie" target="_blank"><i class="fa fa-rss"></i></a></h5></li>
+        <li><h5><a href="http://eepurl.com/bdJ6iT" target="_blank"><i class="fa fa-envelope"></i></a></h5></li>
+        <li>
+        <form>
+          <div class="input-field">
+            <input id="search" type="search" required>
+            <label for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+          </div>
+        </form>
+      </li>
+        <!-- Handlebar nav is still buggy....
+          {{#foreach @blog.navigation}}
+            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+          {{/foreach}}-->
 
+      </ul>
 
-<!-- Handlebar nav is still buggy....
-  {{#foreach @blog.navigation}}
-    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
-  {{/foreach}}-->
-
-
-  <li><a href="http://feeds.feedburner.com/dontdie" target="_blank"><i class="fa fa-rss"></i>_feed</a></li>
-  <li><a href="http://eepurl.com/bdJ6iT" target="_blank"><i class="fa fa-envelope"></i>_newsletter</a></li>
-
-
-
-</nav>
+    </div>
+  </nav>
 </div>
