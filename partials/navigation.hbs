@@ -2,18 +2,18 @@
 
 <div class="navbar-fixed">
   <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper font-effect-anaglyph">
              {{#if @blog.logo}}
-               <a id="blog-logo" class="brand-logo" href="{{@blog.url}}"><img id="logo" src="{{@blog.logo}}" alt="{{@blog.title}} Logo" /></a>
+               <a id="blog-logo" class="logo-wrap" href="{{@blog.url}}"><img id="logo" src="{{@blog.logo}}" alt="{{@blog.title}} Logo" /></a>
              {{else}}
-               <div class="brand-logo"><h5><a href="{{@blog.url}}" title="Go to Home">{{@blog.title}}</a></h5></div>
+               <div class="logo-wrap"><a href="{{@blog.url}}" title="Go to Home">{{@blog.title}}</a></div>
              {{/if}}
 
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><h5><a href="/about/">_readme</a></h5></li>
-        <li><h5><a href="https://www.patreon.com/davidwolinsky" target="_blank">_support</a></h5></li>
-        <li><h5><a href="http://feeds.feedburner.com/dontdie" target="_blank"><i class="fa fa-rss"></i></a></h5></li>
-        <li><h5><a href="http://eepurl.com/bdJ6iT" target="_blank"><i class="fa fa-envelope"></i></a></h5></li>
+      <ul id="nav-mobile" class="right hide-on-med-and-down dd-nav">
+        <li><a href="/about/">readme</a></li>
+        <li><a href="https://www.patreon.com/davidwolinsky" target="_blank">support</a></li>
+        <li><a href="http://feeds.feedburner.com/dontdie" target="_blank"><i class="fa fa-rss"></i></a></li>
+        <li><a href="http://eepurl.com/bdJ6iT" target="_blank"><i class="fa fa-envelope"></i></a></li>
         <li>
         <form>
           <div class="input-field">

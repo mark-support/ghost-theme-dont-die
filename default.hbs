@@ -5,14 +5,6 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
-
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
     {{! Page Meta }}
     <title>{{#if author}}{{{author.name}}}:{{/if}} {{#if post.title}}{{{post.title}}} - {{/if}} {{{@blog.title}}}</title>
     <meta name="description" content="{{meta_description}}" />
@@ -26,6 +18,15 @@
 
     {{>fonts }}
 
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{{asset "css/materialize.css"}}"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
     <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
 
     {{! Ghost outputs important style and meta data with this tag }}
@@ -35,7 +36,7 @@
 <body class="{{body_class}}">
   <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+      <script type="text/javascript" src="{{asset "js/materialize.js"}}"></script>
 
 
    <div class="wrap">

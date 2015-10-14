@@ -4756,6 +4756,8 @@ a.social.white.spotify {
 */
 
 
-.topnav{
-  font:
+.dd-nav{
+  font-size: 26px;
+  font-size: 2.8 rem;
+  font-family: 'Noto Sans', sans-serif;
 }
