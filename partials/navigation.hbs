@@ -1,35 +1,52 @@
 <!-- Navigation here -->
-
 <div class="navbar-fixed">
+
+    <!-- Dropdown Structure -not in active use in dd 1.1 -->
+  <ul id="topics" class="dropdown-content">
+    {{tags separator=" | " prefix="Tagged in:"}}
+
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+  </ul>
+
   <nav>
-    <div class="nav-wrapper font-effect-anaglyph">
+    <div class="nav-wrapper font-effect-anaglyph z-depth-5 teal darken-3">
              {{#if @blog.logo}}
                <a id="blog-logo" class="logo-wrap" href="{{@blog.url}}"><img id="logo" src="{{@blog.logo}}" alt="{{@blog.title}} Logo" /></a>
              {{else}}
                <div class="logo-wrap"><a href="{{@blog.url}}" title="Go to Home">{{@blog.title}}</a></div>
              {{/if}}
+      <ul id="nav-mobile" class="right hide-on-med-and-down col s6">
+        <li><h2><a href="http://feeds.feedburner.com/dontdie" target="_blank"><i class="fa fa-rss"></i></a></h2></li>
+        <li><h2><a href="http://eepurl.com/bdJ6iT" target="_blank"><i class="fa fa-envelope"></i></a></h2></li>
 
-      <ul id="nav-mobile" class="right hide-on-med-and-down dd-nav">
-        <li><a href="/about/">readme</a></li>
-        <li><a href="https://www.patreon.com/davidwolinsky" target="_blank">support</a></li>
-        <li><a href="http://feeds.feedburner.com/dontdie" target="_blank"><i class="fa fa-rss"></i></a></li>
-        <li><a href="http://eepurl.com/bdJ6iT" target="_blank"><i class="fa fa-envelope"></i></a></li>
+        <!-- Handlebar nav -->
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><h2><a href="{{url absolute="true"}}">{{label}}</a></h2></li>
+        {{/foreach}}
+
+          <!-- Dropdown Trigger
+        <li><h2><a class="dropdown-button" href="#!" data-activates="topics">topics<i class="material-icons right">arrow_drop_down</i></a></h2></li>
+          -->
+
+
+        <!--
+
         <li>
-        <form>
-          <div class="input-field">
-            <input id="search" type="search" required>
-            <label for="search"><i class="material-icons">search</i></label>
-            <i class="material-icons">close</i>
-          </div>
-        </form>
-      </li>
-        <!-- Handlebar nav is still buggy....
-          {{#foreach @blog.navigation}}
-            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
-          {{/foreach}}-->
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" required>
+                <label for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
+        </li>
 
+        -->
       </ul>
 
-    </div>
+      </div>
   </nav>
 </div>
