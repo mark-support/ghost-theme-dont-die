@@ -2872,6 +2872,9 @@ button, input[type="submit"] {
 .main .post-top {
   position: relative;
 }
+.post-inner{
+  color: black !important;
+}
 .main .post-inner, .main .post-align {
   padding: 0 15px;
 }
@@ -2879,29 +2882,34 @@ button, input[type="submit"] {
   padding-top: 30px;
 }
 .main .f-expander {
+  display: none;
   position: absolute;
   right: 0;
   top: 100%;
   margin-top: -54px;
-  padding: 15px;
-  height: 54px;
-  width: 54px;
+  height: 0px;
+  width: 0px;
   z-index: 8;
   text-align: center;
+}
+.f-expander{
+    display: none;
 }
 .main .f-expander svg {
   width: 22px;
   height: 22px;
+  display: none;
 }
 .main .f-expander svg#expand {
   fill: #060b0e;
+  display: none;
 }
 .main .f-expander svg#un-expand {
   display: none;
   fill: #060b0e;
 }
 .main .f-expander.active svg#un-expand {
-  display: block;
+  display: none;
 }
 .main .f-expander.active svg#expand {
   display: none;
