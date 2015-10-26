@@ -2635,7 +2635,7 @@ footer.footer .socials {
   z-index: 0;
 }
 .main-archive article.result.cover-image-present h1, .main-archive article.result.cover-image-present h1 a, .main-archive article.result.cover-image-present .excerpt {
-  color: #fff;
+  color: #FFF;
 }
 .main-archive article.result.cover-image-present .inner.post-inner {
   position: relative;
@@ -2872,6 +2872,9 @@ button, input[type="submit"] {
 .main .post-top {
   position: relative;
 }
+.post-inner{
+  color: black !important;
+}
 .main .post-inner, .main .post-align {
   padding: 0 15px;
 }
@@ -2879,29 +2882,34 @@ button, input[type="submit"] {
   padding-top: 30px;
 }
 .main .f-expander {
+  display: none;
   position: absolute;
   right: 0;
   top: 100%;
   margin-top: -54px;
-  padding: 15px;
-  height: 54px;
-  width: 54px;
+  height: 0px;
+  width: 0px;
   z-index: 8;
   text-align: center;
+}
+.f-expander{
+    display: none;
 }
 .main .f-expander svg {
   width: 22px;
   height: 22px;
+  display: none;
 }
 .main .f-expander svg#expand {
   fill: #060b0e;
+  display: none;
 }
 .main .f-expander svg#un-expand {
   display: none;
   fill: #060b0e;
 }
 .main .f-expander.active svg#un-expand {
-  display: block;
+  display: none;
 }
 .main .f-expander.active svg#expand {
   display: none;
@@ -4754,10 +4762,3 @@ a.social.white.spotify {
 	@include textGlitch("glitch", 17, white, black, red, blue, 450, 115);
 }
 */
-
-
-.dd-nav{
-  font-size: 26px;
-  font-size: 2.8 rem;
-  font-family: 'Noto Sans', sans-serif;
-}

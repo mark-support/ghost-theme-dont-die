@@ -12,25 +12,26 @@
   </ul>
 
   <nav>
-    <div class="nav-wrapper font-effect-anaglyph z-depth-5 teal darken-3">
+    <div class="nav-wrapper font-effect-anaglyph z-depth-5 transparent">
              {{#if @blog.logo}}
-               <a id="blog-logo" class="logo-wrap" href="{{@blog.url}}"><img id="logo" src="{{@blog.logo}}" alt="{{@blog.title}} Logo" /></a>
+               <a id="blog-logo" class="logo-wrap" href="{{@blog.url}}"><img id="logo" class="logo" src="{{@blog.logo}}" alt="{{@blog.title}} Logo" /></a>
              {{else}}
                <div class="logo-wrap"><a href="{{@blog.url}}" title="Go to Home">{{@blog.title}}</a></div>
              {{/if}}
-      <ul id="nav-mobile" class="right hide-on-med-and-down col s6">
+      <ul id="nav-mobile" class="right hide-on-med-and-down col s6 nav">
+        <!-- Handlebar nav -->
+        {{#if @blog.navigation}}
+            {{#foreach @blog.navigation}}
+                <li role="presentation" class="nav-{{slug}}{{#if current}} nav-current{{/if}}"><h2><a href="{{url absolute="true"}}">{{label}}</a></h2></li>
+            {{/foreach}}
+        {{/if}}
+
         <li><h2><a href="http://feeds.feedburner.com/dontdie" target="_blank"><i class="fa fa-rss"></i></a></h2></li>
         <li><h2><a href="http://eepurl.com/bdJ6iT" target="_blank"><i class="fa fa-envelope"></i></a></h2></li>
-
-        <!-- Handlebar nav -->
-        {{#foreach navigation}}
-            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><h2><a href="{{url absolute="true"}}">{{label}}</a></h2></li>
-        {{/foreach}}
 
           <!-- Dropdown Trigger
         <li><h2><a class="dropdown-button" href="#!" data-activates="topics">topics<i class="material-icons right">arrow_drop_down</i></a></h2></li>
           -->
-
 
         <!--
 
